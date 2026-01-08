@@ -44,7 +44,7 @@ html{
     color:blue;
     font-weight: bold;
     text-align:center;
-    background-color:white;
+    background-color:blue;
 }
 
 #principal #desplegaments{
@@ -107,7 +107,7 @@ html{
 }
 
 .imatge{
-    width:600px;
+    width:650px;
     margin:20px;
 }
 
