@@ -10,7 +10,7 @@ on:
 
 jobs:
 
-  ModificaRepositoriGithubAmbGithubActions:
+  ModificaRepositoriGithubAmbGithubActions_rvallsaranda:
 
     runs-on: ubuntu-latest
 
@@ -24,11 +24,15 @@ jobs:
       - name: Modifica fitxer md
         run: |
           echo -e "- ${{ github.actor }} modifica el repo ${{ github.repository }} :  "`date`"\n" >> README.md #utilitza instrucció de bash per afegir contingut a README.md
+      - name: Modifica fitxer index.html
+        run: |
+          ARA=$(date)
+          sed -i "s/<\/ul>/    <li>${ARA}<\/li>\n\t<\/ul>/" index.html
 
       - name: commit i push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add --all
-          git commit -m "Afegit contingut a README.md"
+          git commit -m "Afegit contingut a README.md i index.html"
           git push
